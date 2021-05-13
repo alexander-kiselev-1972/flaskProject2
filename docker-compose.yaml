@@ -1,24 +1,32 @@
 version: '2.4'
 
 services:
-  web:
-    build: ./flask
-    ports:
-      - "5001:5000"
-    volumes:
-      - wb-data:/usr/src/app/data
+#  web:
+#    build: ./flask
+#    ports:
+#      - "5001:5000"
+#    depends_on:
+#      - db
+
   db:
     build:
       context: ./db
       dockerfile: Dockerfile
+    container_name: postgres_db
     ports:
       - 5434:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY='lkhgcykjuigtycv6543545gv__cffyuoidsert'
+        DEV_DATABASE_URL='postgresql+psycopg2://postgres:postgres@localhost:5434/campers4'
+        FLASK_APP=flasky.py
+        FLASK_RUN_HOST=0.0.0.0
+        FLASK_DEBUG=True
+    restart: always
+
     volumes:
       - db-data:/var/lib/postgresql/data:delegated
 
 volumes:
   db-data:
-  wb-data:

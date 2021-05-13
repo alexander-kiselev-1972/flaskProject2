@@ -21,7 +21,8 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or  'postgresql+psycopg2://postgres:oSaka_2019@localhost:5434/campers4'
+   # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:postgres@localhost:5434/campers4'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or  'postgresql+psycopg2://postgres:postgres@127.0.0.1:5434/campers4'
 
 
 class TestingConfig(Config):

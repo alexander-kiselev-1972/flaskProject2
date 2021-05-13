@@ -1,10 +1,12 @@
 {% extends "main/base.html" %}
-{% block title %}Index{% endblock %}
-{% block head %}
-    {{ super() }}
-    <style>
-    </style>
-{% endblock %}
-{% block body %}
-<h1>Hello, Sach!</h1>
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello, {% if current_user.is_authenticated %}
+        {{ current_user.username }}
+    {% else %}Stranger
+    {% endif %}!</h1>
+</div>
 {% endblock %}

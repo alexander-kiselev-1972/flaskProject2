@@ -1,1 +1,2 @@
 CREATE DATABASE campers4;
+
