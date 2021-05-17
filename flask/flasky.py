@@ -4,7 +4,7 @@
 
 import os
 from app import create_app, db
-from app.models import User, Role, Permission
+from app.models import Permission,User, Role, models_dict
 from flask import redirect, url_for, request
 from flask_migrate import Migrate
 from flask_admin.contrib.sqla import ModelView
@@ -49,8 +49,9 @@ class MyAdminIndexView(AdminIndexView):
 
 admin = Admin(app, index_view=MyAdminIndexView())
 
-admin.add_view(MyModelView(User, db.session))
-admin.add_view(MyModelView(Role, db.session))
+for i in models_dict:
+    admin.add_view(MyModelView(models_dict[i], db.session))
+
 
 
 @app.shell_context_processor

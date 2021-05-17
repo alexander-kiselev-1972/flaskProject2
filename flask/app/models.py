@@ -31,7 +31,7 @@ class Role(db.Model):
     def insert_roles():
         roles = {
             'User': [Permission.FOLLOW, Permission.COMMENT, Permission.WRITE],
-            'Moderator': [Permission.FOLLOW, Permission.COMMENT,
+            'Bayer': [Permission.FOLLOW, Permission.COMMENT,
                           Permission.WRITE, Permission.MODERATE],
             'Administrator': [Permission.FOLLOW, Permission.COMMENT,
                               Permission.WRITE, Permission.MODERATE,
@@ -203,3 +203,23 @@ class Owner(db.Model):
 
     def __repr__(self):
         return self.name, self.email1, self.phone1, self.ulica_dom, self.index, self.icho
+
+
+
+class Foto(db.Model):
+    __tablename__='foto'
+    id=db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128))
+    images = db.Column(db.String(256))
+
+    def __repr__(self):
+        return self.name, self.images
+
+
+
+models_dict = {
+    "User":User,
+    "Role":Role,
+    "Owner":Owner,
+    "Foto":Foto
+}
