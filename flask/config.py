@@ -14,10 +14,13 @@ class Config:
     FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    #FLASK_ADMIN_SWATCH = 'cerulean'
 
     @staticmethod
     def init_app(app):
         pass
+
+
 
 class DevelopmentConfig(Config):
     DEBUG = True

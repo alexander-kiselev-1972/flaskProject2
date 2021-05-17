@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+{% from "caravan/macros.html" import rad %}
+
+{% block en %}
+<html lang="en">
+{% endblock %}
+<head>
+    <!-- Meta Tags For Seo + Page Optimization -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="DEILMANN s.r.o.">
+    <!-- description -->
+    <meta name="description" content="Kompaktný multifunkčný mini caravan – toto je malý mobilný dom, ideálny na pohodlnú rekreáciu v prírode. Vhodný pre rybárov, poľovníkov a na cestovanie. Vďaka konštrukcii modulu, bude vo vnútri teplo aj pri -30°C a príjemne aj pri +30°C. Možnosť výberu modelu korpusu, konfigurácie a ďalších komponentov.">
+    <!-- keywords -->
+    <meta name="keywords" content="karavan, caravan, camper, camper trailer, travel trailer, towed trailer, кемпер, drop-trailer, teardrop, obytný príves, deilmann, cestovanie, rybárstvo, poľovnictvo, rekreácia, подорожі, риболовля, полювання, відпочинок, путешествия, рыбалка, охота, отдых, travel, fishing, hunting, recreation, Reisen, Angeln, Jagen, Erholung, Wohnwagen">
+    <!-- Page Title -->
+    <title>Obytné prívesy | DEILMANN s.r.o.</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='agency/images/favicon.ico') }}">
+    <!--css links-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'vendor/css/bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'vendor/css/cubeportfolio.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'vendor/css/wow.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'vendor/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'vendor/css/mediaelementplayer.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'agency/css/line-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'agency/css/settings.css') }}">
+
+
+<!--    <link rel="stylesheet" href="agency/css/slider.css">-->
+
+    <!-- main style-->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'agency/css/style.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
+
+<!--loading start-->
+<div class="loader">
+    <div class="loaders">
+        <div class="l" id="l-1"><i></i></div>
+        <div class="l" id="l-2"><i></i></div>
+        <div class="l" id="l-3"><i></i></div>
+        <div class="l" id="l-4"><i></i></div>
+        <div class="l" id="l-5"><i></i></div>
+        <div class="l" id="l-6"><i></i></div>
+        <div class="l" id="l-7"><i></i></div>
+        <div class="l" id="l-8"><i></i></div>
+    </div>
+</div>
+<!--loading end-->
+
+<!--bottom Arrow start-->
+<div class="bottom-arr scroll-top-arrow">
+    <i class="las la-angle-up"></i>
+</div>
+<!--bottom Arrow end-->
+
+{% block header %}
+<!--header sec start-->
+<header id="home">
+    <div class="upper-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 mt-auto mb-auto d-none d-lg-block">
+                    <h4 class="top-text">Ponúkame vám kompaktné multifunkčné mini karavany!</h4>
+                </div>
+                <div class="col-12 col-lg-6 mt-auto mb-auto">
+                    <ul class="top-detail d-block d-lg-flex justify-content-center justify-content-lg-end">
+                        <li class="d-none d-lg-block"><span><i class="la la-mobile"></i></span><a href="tel:{{ own[0].phone2 }}">{{ own[0].phone1 }}</a></li>
+                        <li class="d-none d-lg-block"><span><i class="la la-envelope"></i></span><a href="mailto:{{ own[0].email2 }}">{{ own[0].email2 }}</a></li>
+                        <li class="social-links">
+                            <span class="fb"><a href="#"><i class="la la-facebook-f"></i></a></span>
+{#                            <span class="twit"><a href="#"><i class="la la-twitter"></i></a></span>#}
+                            <span class="insta"><a href="#"><i class="la la-instagram"></i></a></span>
+                        </li>
+                    </ul>
+                    <div class="toggle-btn d-block d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a class="navbar-brand d-block d-lg-none" href="{{ url_for('main.index') }}"><img src="{{ url_for('static', filename='agency/images/logo.png') }}" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lower-nav">
+       <div class="container">
+           <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block">
+               <div class="main-nav collapse navbar-collapse d-flex">
+                   <ul class="navbar-nav left-nav d-flex">
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#home">Domov</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#about-sec">O karavanoch</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#company-portfolio-section">Fotogaléria</a>
+                       </li>
+                   </ul>
+                   <a class="navbar-brand standard-logo" href="/"><img src="{{ url_for('static', filename="agency/images/logo.png")}}" alt="logo"></a>
+                   <a class="navbar-brand fixed-logo" href="/"><img src="{{ url_for('static', filename="agency/images/logo-3.png")}}" alt="logo"></a>
+                   <ul class="navbar-nav right-nav d-flex  ml-auto">
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#configuration">Výber modulu</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#pricing-sec">Doplnky</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link scroll" href="#contact-sec">Kontakt</a>
+                       </li>
+                   </ul>
+               </div>
+           </nav>
+       </div>
+        <div class="toggle-btn toggle-btn-lg d-none d-lg-block">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="broad">
+          <div class="close-nav"><i class="las la-times"></i></div>
+                <nav class="navbar navbar-light">
+                    <div class="main-nav collapse navbar-collapse d-flex justify-content-center align-items-center">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#home">Domov</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#about-sec">O karavanoch</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#company-portfolio-section">Fotogaléria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#configuration">Výber modulu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#pricing-sec">Doplnky</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#contact-sec">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+               </nav>
+        </div>
+</header>
+<!--header sec end-->
+{% endblock %}
+{% block slider %}
+<!--slider sec start-->
+<div id="slider-section" class="slider-section">
+
+    <!-- START REVOLUTION SLIDER -->
+    <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="norex-agency01" data-source="gallery" style="background:transparent;padding:0;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+        <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
+            <ul>	<!-- SLIDE  -->
+                <li data-index="rs-1" data-transition="slideleft,slideright" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500,1500"  data-thumb="assets/50x50_d6aeb-slide1-org.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{url_for('static', filename='agency/images/slide1.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+                         id="slide-1-layer-26"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontweight="['100','100','300','300']"
+                         data-width="full"
+                         data-height="full"
+                         data-whitespace="nowrap"
+
+                         data-type="shape"
+                         data-basealign="slide"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5;background-color:rgba(20,32,34,0.3);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-1-layer-20"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-70']"
+                         data-fontsize="['65','65','65','50']"
+                         data-lineheight="['65','65','81','65']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; white-space: nowrap; font-size: 65px; line-height: 65px; font-weight: 700; color: #ffffff; letter-spacing:0;font-family:'Raleway',sans-serif;">
+                        <span class="slider-line-text">Na</span> cestovanie
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-1-layer-22"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','18','18']"
+                         data-fontsize="['20','20','20','18']"
+                         data-lineheight="['22','22','26','26']"
+                         data-width="['none','none','532','420']"
+                         data-height="none"
+                         data-whitespace="['nowrap','nowrap','normal','normal']"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 300; color: #ffffff; letter-spacing:0;font-family:'Open Sans', sans-serif;;">
+                        <p>Vezmite si svoj domov všade so sebou!</p>
+                    </div>
+
+                    <!-- LAYER NR. 5 -->
+                    <div class="tp-caption tp-resizeme"
+                         id="slide-1-layer-24"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['70','70','104','104']"
+                         data-type="button"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":280,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"500","ease":"Linear.ease","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
+                         data-textAlign="['center','center','center','center']"
+                         style="z-index: 11; min-width:960px; max-width:960px; white-space: nowrap; font-size: 12px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0;font-family:'Raleway',sans-serif;">
+                        <a href="#about-sec" class="btn slider-trans-btn rounded-pill">Čítať viac</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-15" data-transition="slideleft,slideright" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500,1500"  data-thumb="assets/50x50_72c0d-apartment-architecture-bookcase-bookshelves-271795.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ url_for('static', filename='agency/images/slide2.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 6 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+                         id="slide-15-layer-26"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-width="full"
+                         data-height="full"
+                         data-whitespace="nowrap"
+
+                         data-type="shape"
+                         data-basealign="slide"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":2,"speed":3000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5;background-color:rgba(20,32,34,0.3);"> </div>
+
+                    <!-- LAYER NR. 7 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-15-layer-20"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-70']"
+                         data-fontsize="['65','65','65','50']"
+                         data-lineheight="['65','65','81','65']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"sfxcolor":"#ffffff","sfx_effect":"blockfromright","frame":"0","from":"z:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; white-space: nowrap; font-size: 65px; line-height: 65px; font-weight: 700; color: #ffffff; letter-spacing:0;font-family:'Raleway',sans-serif;">
+                        <span class="slider-line-text">Pre</span> rybárov
+                    </div>
+
+                    <!-- LAYER NR. 9 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-15-layer-22"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','18','18']"
+                         data-fontsize="['20','20','20','18']"
+                         data-lineheight="['22','22','26','26']"
+                         data-width="['none','none','532','420']"
+                         data-height="none"
+                         data-whitespace="['nowrap','nowrap','normal','normal']"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"sfxcolor":"#ffffff","sfx_effect":"blockfromtop","frame":"0","from":"z:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 300; color: #ffffff; letter-spacing:0;font-family:'Open Sans', sans-serif;;">
+                        <p>Môžete sa dostať kamkoľvek!</p>
+                    </div>
+
+                    <!-- LAYER NR. 10 -->
+                    <!-- LAYER NR. 10 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-2-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['70','70','104','104']"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="button"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":280,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"500","ease":"Linear.ease","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
+                         data-textAlign="['center','center','inherit','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 11; min-width:960px; max-width:960px;white-space:nowrap;font-size: 12px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0;font-family:'Raleway',sans-serif;">
+                        <a href="#configuration" class="btn slider-yellow-btn mr-3 rounded-pill">Vybrať sadu</a>
+                    </div>
+
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-14" data-transition="slideleft,slideright" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1500,1500"  data-thumb="assets/50x50_0112a-flat-screen-tv-1571458.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ url_for('static', filename='agency/images/slide3.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 11 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
+                         id="slide-14-layer-26"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-width="full"
+                         data-height="full"
+                         data-whitespace="nowrap"
+
+                         data-type="shape"
+                         data-basealign="slide"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5;background-color:rgba(20,32,34,0.3);"> </div>
+
+                    <!-- LAYER NR. 12 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-14-layer-20"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-70']"
+                         data-fontsize="['65','65','65','50']"
+                         data-lineheight="['81','81','82','65']"
+                         data-width="['none','none','none','none']"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"x:[175%];y:0;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;","mask":"x:[-100%];y:0;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; min-width: 242px; max-width: 282px; white-space: nowrap; font-size: 65px; line-height: 81px; font-weight: 700; color: #ffffff; letter-spacing:0;font-family:'Raleway',sans-serif;">
+                        <span class="slider-line-text">Pre</span> poľovníkov
+                    </div>
+
+                    <!-- LAYER NR. 14 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-14-layer-22"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','18','18']"
+                         data-fontsize="['20','20','20','18']"
+                         data-lineheight="['22','22','26','26']"
+                         data-width="['none','none','532','420']"
+                         data-height="none"
+                         data-whitespace="['nowrap','nowrap','normal','normal']"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power2.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 300; color: #ffffff; letter-spacing:0;font-family:'Open Sans', sans-serif;;">
+                        <p>Aj na pohodlnú rekreáciu v prírode!</p>
+                    </div>
+
+                    <!-- LAYER NR. 15 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-14-layer-24"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['70','70','104','104']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="button"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":280,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"500","ease":"Linear.ease","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
+                         data-textAlign="['inherit','inherit','inherit','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 11; max-width:960px; white-space: nowrap; font-size: 12px; line-height: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0;font-family:'Raleway',sans-serif;">
+                        <a href="#pricing-sec" class="btn slider-yellow-btn rounded-pill">Pozrieť doplnky</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+        </div>
+    </div>
+    <!-- END REVOLUTION SLIDER -->
+
+</div>
+<!--slider sec end-->
+{% endblock %}
+
+{% block about_sec_start %}
+
+<!--About sec start-->
+<section id="about-sec" class="about-sec section-padding">
+    <div class="container">
+        <div class="row about-sec-detail">
+            <div class="col-12 col-lg-6 text-center text-lg-left">
+                <div class="about-des-sec wow fadeInLeft">
+                    <div class="ex-detail">
+                        <h4 class="large-heading">
+                            <span class="heading-1">Mini karavan – </span>
+                            <span class="heading-2">to je</span>
+                        </h4>
+                        <span class="fly-text">O karavanoch</span>
+                    </div>
+                    <p class="small-text text-center text-lg-left">
+                        malý mobilný dom, ideálny na pohodlnú rekreáciu v prírode. Vhodný pre rybárov, poľovníkov a na
+                        cestovanie. Vyrobený v konfigurácii prívesu „teardrop“, kde miesto na spanie a kuchynský modul
+                        sú umiestnené v samostatných priehradkách. Izolované sú steny, strop a podlaha. Najväčšia
+                        prípustná celková hmotnosť prívesu nepresahuje 750 kg.
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="about-img-holder">
+                    <div class="behind-overlay"></div>
+                    <img src="{{ url_for('static', filename='agency/images/about-img.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-6 col-lg-4 about-media wow fadeInUp">
+                <span class="about-icon">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                </span>
+                <h4 class="small-heading">Za každého počasia v lete aj v zime</h4>
+                <span class="ex-line"></span>
+                <p class="small-text">Vo vnútri modulu bude teplo aj pri -30°C a príjemne aj pri +30°C.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 about-media wow fadeInUp">
+                <span class="about-icon">
+                    <i class="la la-globe"></i>
+                </span>
+                <h4 class="small-heading">Na akýchkoľvek cestách</h4>
+                <span class="ex-line"></span>
+                <p class="small-text">Ľahko sa dostanete kamkoľvek mimo cesty.</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 about-media wow fadeInUp">
+                <span class="about-icon">
+                    <i class="la la-bold"></i>
+                </span>
+                <h4 class="small-heading">Vodičský preukaz kategórie „B“</h4>
+                <span class="ex-line"></span>
+                <p class="small-text">Potrebujete iba VP kat. „B“ a auto s výkonom motora vyšším ako 37 kW.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--ABout sec end-->
+
+{% endblock %}
+
+
+{% block portfolio %}
+<!--portfolio section start-->
+<section class="portfolio-sec company-portfolio-section section-padding" id="company-portfolio-section">
+    <div class="container">
+        <div class="section-heading">
+            <div class="row">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="ex-detail">
+                        <h4 class="large-heading">
+                            <span class="heading-1">Fotky</span>
+                            <span class="heading-2">našich karavanov</span>
+                        </h4>
+                        <span class="fly-text">Fotogaléria</span>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-5">
+                    <div id="js-filters-mosaic" class="cbp-l-filters-button wow fadeInUp" data-wow-delay="350ms">
+                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"><p>Všetky</p></div>
+                        <div data-filter=".veles" class="cbp-filter-item"><p>VELES</p></div>
+                        <div data-filter=".yenisei" class="cbp-filter-item"><p>YENISEI</p></div>
+                        <div data-filter=".ural" class="cbp-filter-item"><p>{{ rad(own) }}</p></div>
+                        <div data-filter=".additions" class="cbp-filter-item"><p>Doplnky</p></div>
+                    </div>
+
+                    <div id="js-grid-mosaic" class="cbp cbp-l-grid-mosaic">
+
+                        <div class="cbp-item veles">
+                            <a href="{{ url_for('static', filename='agency/images/p1.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p1.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Creative</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item veles">
+                            <a href="{{ url_for('static', filename='agency/images/p2.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p2.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Web Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item yenisei">
+                            <a href="{{ url_for('static', filename='agency/images/p3.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p3.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Logo Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item yenisei">
+                            <a href="{{ url_for('static', filename='agency/images/p4.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p4.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Development</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item ural disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/p5.jpg') }}" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p5.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Creative</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item veles disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/p6.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p6.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Web Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item additions disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/hatch-fan.png') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/hatch-fan.png') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Web Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item additions disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/caravan-cover.png') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/caravan-cover.png') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Web Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item veles disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/p7.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p7.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Creative</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cbp-item veles disp-none">
+                            <a href="{{ url_for('static', filename='agency/images/p8.jpg') }}" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{{ url_for('static', filename='agency/images/p8.jpg') }}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">Web Design</h4>
+                                        <p class="p-hover-des">35 WP Anniversary</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="js-loadMore-lightbox-gallery" class="cbp-l-loadMore-button wow fadeInUp" data-wow-delay="650ms">
+                        <div class="row portfolio-foot-detail">
+                            <div class="col-6 col-lg-3 offset-lg-6 text-left pl-4">
+                                <span class="p-text">Fotky od výrobcu a našich</span>
+                                <span class="p-text">spokojných zákazníkov</span>
+                            </div>
+                            <div class="col-6 col-lg-3  d-flex justify-content-end align-items-center">
+                                <a href="{{ url_for('static', filename='agency/images/p5.jpg') }}" class="btn anim-btn rounded-pill cbp-caption cbp-lightbox">Zobraziť všetky fotografie<span></span><span></span><span></span><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--portfolio section end-->
+{% endblock %}
+
+{% block configuration %}
+<!--Configuration sec start-->
+<section id="configuration" class="our-services section-padding">
+    <div class="container">
+        <div class="row text-center text-md-left">
+            <div class="col-12 service-text text-center">
+                <div class="our-heading">
+                    <span class="heading-title">Vyberte si sadu modulu</span>
+                    <h4 class="heading-text">Naše karavany sú k dispozícii v týchto sadách</h4>
+                </div>
+                <ul class="nav nav-pills justify-content-center mb-md-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#p1" role="tab"  aria-selected="true"><span>ZÁKLADNÁ</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#p2" role="tab" aria-selected="false"><span>KOMFORT</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#p3" role="tab" aria-selected="false"><span>LUX</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 service-tab">
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="p1" role="tabpanel" aria-labelledby="pills-1-tab">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 tab-img">
+                                <img alt="service1" src="{{ url_for('static', filename='agency/images/sada_zakladna.jpg') }}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 tab-detail d-flex align-items-center">
+                                <div class="tab-des">
+                                <span class="tab-num">Základná</span>
+                                <h4 class="tab-title">Modulové vybavenie:</h4>
+                                <p class="tab-text">
+                                    - vonkajšia krytina strechy, podlahy a bokov - hliníkový kompozit;<br>
+                                    - hrúbka izolácie stien a vnút. priečok je 20mm; stropu – 30, a podlahy - 50mm;<br>
+                                    - vnútorný náter - lakovaná preglejka; rámovanie - hliníkový profil;<br>
+                                    - 2 skrinky s textilnými závesmi a výklenkom pre mobilné zariadenia;<br>
+                                    - závesný zadný kryt modulu; - vnútorné vetranie;<br>
+                                    - skladovacia skrinka v kuchyni; - technické oddelenie;<br>
+                                    - farba modulu je na výber.
+                                </p>
+                                <button class="btn anim-btn rounded-pill">VYBRAŤ DOPLNKY
+                                    <span></span><span></span><span></span><span></span>
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="p2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 tab-img">
+                                <img alt="service2" src="{{ url_for('static', filename='agency/images/sada_komfort.png')}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 tab-detail d-flex align-items-center">
+                                <div class="tab-des">
+                                    <span class="tab-num">Komfort</span>
+                                    <h4 class="tab-title">Modulové vybavenie:</h4>
+                                    <p class="tab-text">
+                                        - základná sada;<br>
+                                        - matrac vo veľkosti 2000 x 1400mm (penová guma 8cm, prírodný ľan), ktorý je možné zložiť aj ako pohovku;<br>
+                                        - drez, elektrický kohútik, čerpadlo, 30l nádrž na čistú vodu, 30l nádrž na špinavú vodu;<br>
+                                        - kuchynský stojan;<br>
+                                        - osvetlenie obytného priestoru (1 lampa) a kuchynského priestoru (1 lampa);<br>
+                                        - polica s boxami na topánky v obytnom priestore;<br>
+                                        - batéria 7Ah.
+                                    </p>
+                                    <button class="btn anim-btn rounded-pill">VYBRAŤ DOPLNKY
+                                        <span></span><span></span><span></span><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="p3" role="tabpanel" aria-labelledby="pills-3-tab">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 tab-img">
+                                <img alt="service3" src="{{ url_for('static', filename='agency/images/sada_lux.png') }}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 tab-detail d-flex align-items-center">
+                                <div class="tab-des">
+                                    <span class="tab-num">Lux</span>
+                                    <h4 class="tab-title">Modulové vybavenie:</h4>
+                                    <p class="tab-text">
+                                        - sada "Komfort";<br>
+                                        - zásuvky 12V (1ks v kuchyni, 1ks v obytnom priestore);<br>
+                                        - zásuvky 220V (1ks v kuchyni, 1ks v obytnom priestore);<br>
+                                        - nútené vnútorné vetranie;<br>
+                                        - solárny panel + regulátor;<br>
+                                        - externá zásuvka + nabíjačka batérií;<br>
+                                        - gélová batéria 45Ah (výmena v sade „Komfort“ batérie 7Ah na 45Ah).
+                                    </p>
+                                    <button class="btn anim-btn rounded-pill">VYBRAŤ DOPLNKY
+                                        <span></span><span></span><span></span><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Configuration sec end-->
+{% endblock %}
+
+{% block quote_sec_start %}
+<!--Quote sec start-->
+<section id="quote-sec" class="quote-sec">
+    <div class="quote-overlay"></div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12 text-center d-flex justify-content-center">
+            <div class="q-detail">
+            <p class="quote-text"><i class="fas fa-quote-left"></i>
+                Creativity is allowing yourself to make mistakes
+                Art is knowing which ones to keep
+                Some people dream of success, while other people get up every morning and make it happen.
+                <i class="fas fa-quote-right"></i></p>
+            <h4 class="quote-writer mb-0">- ALICE JOHNSON -</h4>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!--Quote sec end-->
+{% endblock %}
+
+{% block pricing_section_start %}
+<!--Pricing section start-->
+<section id="pricing-sec" class="pricing-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="our-heading">
+                    <span class="heading-title">Výber doplnkov</span>
+                    <h4 class="heading-text">Je len na vás aké doplnkové vybavenie si vyberiete</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row pricing-cards">
+            {% for x in models %}
+                <div class="col-12 col-lg-4 p-card">
+                    <div class="{{ x.css_class }}">
+                        <h4 class="pricing-heading text-center text-md-left">{{ x.name }}</h4>
+                        <div class="row no-gutters price-info text-center text-md-left">
+                        <div class="col-12 col-md-6 price-tag">
+                         <span class="p-icon"><i class="las la-euro-sign"></i></span>
+                         <span class="p-price">{{ x.price }}</span>
+                        </div>
+                        <div class="col-12 col-md-6 price-text">
+                            <div class="price-img">
+                                <img src="{{ url_for('static', filename='agency/images/' ~ x.description) }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                        <form class="caravan-price" action="" method="post">
+                            {{ form_caravan.csrf_token() }}
+                            <ul class="feature-list">
+                                <li><label class="custom-checkbox">{{ form_caravan.heater(data_price='100') }}<span>Heater<img src="{{ url_for('static', filename='agency/images/heater.png') }}" alt="Heater"></span></label></li>
+                                <li><label class="custom-checkbox">{{ form_caravan.hatch_fan(data_price='200') }}<span>Roof hatch fan<img src="{{ url_for('static', filename='agency/images/hatch-fan.png') }}" alt="Roof hatch fan"></span></label></li>
+                                <li><label class="custom-checkbox">{{ form_caravan.caravan_cover(data_price='300') }}<span>Caravan cover<img src="{{ url_for('static', filename='agency/images/caravan-cover.png') }}" alt="Caravan cover"></span></label></li>
+                                <li><label class="custom-checkbox">{{ form_caravan.support_legs(data_price='300') }}<span>Trailer support legs<img src="{{ url_for('static', filename='agency/images/support-legs.png') }}" alt="Trailer support legs"></span></label></li>
+                                <li><label class="custom-checkbox">{{ form_caravan.roof_rack(data_price='200') }}<span>Roof rack cross bars<img src="{{ url_for('static', filename='agency/images/roof-rack.png')}}" alt="Roof rack cross bars"></span></label></li>
+
+                                {{ form_caravan.color(value='') }}
+                                <li><button type="button" class="btn btn-warning btn-sm btn-color btn-choose-color" data-toggle="modal" data-target="#chooseColor" data-id_modal="{{ x.id - 1 }}">Choose a color</button></li>
+
+                                {% for radio_chassis in form_caravan.chassis %}
+                                    {% if radio_chassis.id == 'chassis-0' %}
+                                        <li><label class="custom-radio">{{ radio_chassis() }}<span>Without chassis<img src="{{ url_for('static', filename='agency/images/no-chassis.png') }}" alt="Without chassis"></span></label></li>
+                                    {% else %}
+                                        <li><label class="custom-radio">{{ radio_chassis(data_price='600', checked=true) }}<span>With chassis<img src="{{ url_for('static', filename='agency/images/with-chassis.png') }}" alt="With chassis"></span></label>
+                                            <ul class="feature-list brake">
+                                                <li><label class="custom-checkbox">{{ form_caravan.parking_brake(data_price='520') }}<span>With parking brake<img src="{{ url_for('static', filename='agency/images/parking-brake-2.jpg')}}" alt="Parking brake"></span></label></li>
+                                                <li><label class="custom-checkbox">{{ form_caravan.spare_tire(data_price='100') }}<span>Spare tire<img src="{{ url_for('static', filename='agency/images/spare-tire.png') }}" alt="Spare tire"></span></label></li>
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {{ form_caravan.price(value='') }}
+                                {{ form_caravan.model_id(id='model_id-' ~ x.id, value=x.id) }}
+                            </ul>
+
+                            {{ form_caravan.submit(class='btn yellow-anim-btn rounded-pill w-100') }}
+                            <!-- <a href="#" class="btn yellow-anim-btn rounded-pill w-100"><span></span><span></span><span></span><span></span><span></span>Купить</a> -->
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--Pricing section end-->
+
+{% endblock %}
+
+{% block kontakt %}
+
+<!--Contact us sec start-->
+<section class="contact-sec" id="contact-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="contact-detail wow fadeInLeft">
+                    <div class="ex-detail">
+                        <h4 class="large-heading">
+                            <span class="heading-1">Kontaktujte</span>
+                            <span class="heading-2">nás</span>
+                        </h4>
+                        <span class="fly-text">Kontakt</span>
+                    </div>
+                    <p class="small-text text-center text-md-left">
+                        {{ own[0].text }}
+                    </p>
+                    <div class="row location-details text-center text-md-left">
+                        <div class="col-12 col-md-6 addr-list">
+                            <h4 class="heading-text">Slovensko</h4>
+                            <ul>
+                                <li><i class="las la-mobile-alt"></i><a href="tel:{{ own[0].phone2 }}">{{ own[0].phone1 }}</a></li>
+                                <li><i class="las la-envelope"></i><a href="mailto:{{ own[0].email1 }}">{{ own[0].email1 }}</a></li>
+                                <li><i class="las la-map-marker"></i><a target="_blank" href="https://goo.gl/maps/xb8JJ222PDdaWmhP7">{{ own[0].ulica_dom}}, <br>{{ own[0].index }} Žiar nad Hronom</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 contact-box text-center text-md-left">
+                <div class="c-box wow fadeInRight">
+                    <h4 class="small-heading">Leave Message</h4>
+                    {% block forma %}
+
+{#                <form class="contact-form" id="contact-form" method="post">#}
+{##}
+{#                    <div class="row my-form">#}
+{#                        <div class="display-error"><span id="error"></span></div>#}
+{#                        <div class="col-12 col-md-6">#}
+{#                           <input type="text" class="form-control" id="candidate_fname" name="candidate_fname" placeholder="First Name" required="required">#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-6">#}
+{#                            <input type="text" class="form-control" id="candidate_lname" name="candidate_lname" placeholder="Last Name" required="required">#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-6">#}
+{#                            <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Email" required="required">#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-6">#}
+{#                            <input type="text" class="form-control" id="user_subject" name="user_subject" placeholder="Subject" required="required">#}
+{#                        </div>#}
+{#                        <div class="col-12">#}
+{#                            <textarea class="form-control" id="user_message" name="user_message" placeholder="Message" rows="7" required="required"></textarea>#}
+{#                        </div>#}
+{#                        <div class="col-12">#}
+{#                            <button class="btn anim-btn rounded-pill user-contact" type="submit">SUBMIT#}
+{#                                <span></span><span></span><span></span><span></span><span></span>#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </form>#}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Contact Us sec end-->
+
+{% endblock %}
+
+{% block map %}
+
+<!-- Map sec start-->
+<div id="map-sec" class="map-sec">
+    <div class="row no-gutters">
+        <div id="google-map" class="bg-light-gray map col-12"></div>
+    </div>
+</div>
+<!-- Map sec ends -->
+
+{% endblock %}
+
+<!-- Footer sec start-->
+<div class="footer-sec" id="footer-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="social-icons d-flex">
+                        <a href="javascript:void(0)" class="wow fadeInUp"><i class="lab la-facebook-f"></i> </a>
+                        <a href="javascript:void(0)" class="wow fadeInDown"><i class="lab la-twitter"></i> </a>
+                        <a href="javascript:void(0)" class="wow fadeInUp"><i class="lab la-google"></i> </a>
+                        <a href="javascript:void(0)" class="wow fadeInDown"><i class="lab la-linkedin-in"></i> </a>
+                        <a href="javascript:void(0)" class="wow fadeInUp"><i class="lab la-instagram"></i> </a>
+                        <a href="javascript:void(0)" class="wow fadeInDown"><i class="las la-envelope"></i> </a>
+                </div>
+            </div>
+            <div class="col-12">
+                <p class="rites text-center small-text">&copy; 2020 DEILMANN s.r.o.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer sec End -->
+
+<!-- Cookie sec start-->
+<div id="cookie-agreement" class="cookie-wrap hide">
+    <div class="container">
+        <div class="l-section">
+            <p>Этот сайт использует cookie - <a href="{{ url_for('main.cookie') }}" target="_blank">подробнее</a>. Вы можете изменить настройки cookie в своём браузере.</p>
+        </div>
+        <div class="r-section">
+            <button class="btn btn-link btn-center cookie-close">Принять и закрыть</button>
+        </div>
+    </div>
+</div>
+<!-- Cookie sec End-->
+
+<!-- Modal sec Start -->
+<div class="modal fade" id="chooseColor" tabindex="-1" aria-labelledby="chooseColorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chooseColorLabel">Какой цвет корпуса вы бы хотели?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Зелений"  value="green">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/green.png') }}')"></div>
+                        <div class="color-text"><p>Зелений</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Асфальт" value="asphalt">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/asphalt.png') }}')"></div>
+                        <div class="color-text"><p>Асфальт</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Болотний" value="marsh">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/marsh.png') }}')"></div>
+                        <div class="color-text"><p>Болотний</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Голубий" value="sky-blue">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/sky-blue.png') }}')"></div>
+                        <div class="color-text"><p>Голубий</p></div>
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Жовтий" value="yellow">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/yellow.png') }}')"></div>
+                        <div class="color-text"><p>Жовтий</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Червоний" value="red">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/red.png') }}')"></div>
+                        <div class="color-text"><p>Червоний</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Оранжевий" value="orange">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/orange.png') }}')"></div>
+                        <div class="color-text"><p>Оранжевий</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Сірий" value="grey">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/grey.png') }}')"></div>
+                        <div class="color-text"><p>Сірий</p></div>
+                    </label>
+                </div>
+                <div class="row">
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Синій" value="blue">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/blue.png') }}')"></div>
+                        <div class="color-text"><p>Синій</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Фіолетовий" value="violet">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/violet.png') }}')"></div>
+                        <div class="color-text"><p>Фіолетовий</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Інший колір" value="another-color">
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/another-color.png') }}')"></div>
+                        <div class="color-text"><p>Інший колір</p></div>
+                    </label>
+                    <label class="color-block">
+                        <input class="color-radio" type="radio" name="color" data-name="Хочу свій принт" value="own-print">
+
+                        <div class="color-img" style="background-image: url('{{ url_for('static', filename='agency/images/colors/own-print.png')}}')"></div>
+                        <div class="color-text"><p>Хочу свій принт</p></div>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning confirm-color-button" data-id="" data-dismiss="modal">Підтвердити</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal sec End-->
+
+<script src="{{ url_for('static', filename='vendor/js/bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/jquery.themepunch.tools.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/jquery.themepunch.revolution.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/jquery.cubeportfolio.min.js') }}"></script>
+
+<!-- SLIDER REVOLUTION EXTENSIONS -->
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.migration.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/parallaxie.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/js/mediaelement-and-player.min.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnZQx8dUfcrwWwKvN88ue-9N3QqIzeqSg"></script>
+
+<script src="{{ url_for('static', filename='agency/js/calculator.js') }}"></script>
+{#<script src="{{ url_for('static', filename='agency/js/contact-form.js') }}"></script>#}
+<script src="{{ url_for('static', filename='agency/js/map.js') }}"></script>
+<script src="{{ url_for('static', filename='agency/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='agency/js/cookie-plugin.js') }}"></script>
+<script src="{{ url_for('static', filename='agency/js/agree-cookie.js') }}"></script>
+
+</body>
+</html>

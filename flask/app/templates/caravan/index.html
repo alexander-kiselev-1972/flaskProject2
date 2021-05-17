@@ -1,0 +1,103 @@
+{% extends "caravan/base.html" %}
+{% from "caravan/macros.html" import owner %}
+{#{% import "bootstrap/wtf.html" as wtf %}#}
+{#{% block forma %}#}
+{##}
+{##}
+{#    {% for message in get_flashed_messages() %}#}
+{#    <div class="alert alert-warning">#}
+{#        <button type="button" class="close" data-dismiss="alert"></button>{{ message }}</div>#}
+{##}
+{#{% endfor %}#}
+{#    {{ wtf.quick_form(form) }}#}
+{##}
+{#{% endblock %}#}
+
+{% block forma %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert"></button>{{ message }}</div>
+{% endfor %}
+
+    <form class="contact-form"  method="post">
+    {{ form.csrf_token }}
+                    <div class="row my-form">
+                        <div class="display-error"><span id="error"></span></div>
+                        <div class="col-12 col-md-6">
+                            <label for="candidate_fname"></label><input type="text" class="form-control" id="candidate_fname" placeholder="First Name" required="required" {{ form.first_name}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="candidate_lname"></label><input type="text" class="form-control" id="candidate_lname" placeholder="Last Name" required="required" {{ form.last_name}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="user_email"></label><input type="email" class="form-control" id="user_email" placeholder="Email" required="required" {{ form.email}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="user_subject"></label><input type="text" class="form-control" id="user_subject" placeholder="Subject" required="required" {{ form.subject}}
+                        </div>
+                        <div class="col-12">
+                            <label for="user_message"></label><textarea class="form-control" id="user_message" placeholder="Message" rows="7" required="required" {{ form.message}}</textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn anim-btn rounded-pill user-contact" type="submit">SUBMIT
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </button>
+                        </div>
+                    </div>
+
+    </form>
+{% endblock %}
+{##}
+{#    <div id="msg"></div>#}
+{#    <script>#}
+{##}
+{#            $(document).ready(function () {#}
+{#                $("#contact-form").submit(function (event) {#}
+{#                    event.preventDefault();#}
+{#                    sendAjaxForm("contact-form", "msg");#}
+{#                                                           })#}
+{#            });#}
+{##}
+{##}
+{#            function sendAjaxForm(form_ajax, msg) {#}
+{#                let form = $("#contact-form" + form_ajax);#}
+{#                $.ajax({#}
+{#                    type: form.attr('method'),#}
+{#                    url: form.attr('action'),#}
+{#                    data: form.serialize(),#}
+{#                    success: function (response) {#}
+{#                        let json = jQuery.parseJSON(response);#}
+{#                        $("#" + msg).html(json.msg);#}
+{#                        setTimeout(function () {#}
+{#                            $("#" + msg).html('');#}
+{#                        }, 5000);#}
+{#                        if (json.success == 'true') {#}
+{#                            form.trigger('reset');#}
+{#                        }#}
+{#                        else {#}
+{#                            alert('Something was wrong!');#}
+{#                            $("#" + msg).html(json.msg);#}
+{#                            console.log('Some error, check all fields, please');#}
+{#                        }#}
+{#                    },#}
+{#                    error: function (error) {#}
+{#                        console.log(error);#}
+{#                    }#}
+{#                });#}
+{#            }#}
+{#        </script>#}
+{#{% endblock %}#}
+
+{##}
+{##}
+{#{% block rekvisit %}#}
+{#          <i class="las la-mobile-alt"></i><a href="tel:{{ own[0].phone1 }}">{{ own[0].phone1 }}</a><br>#}
+{#          <i class="las la-envelope"></i><a href="mailto:{{ own[0].email1 }}">{{  own[0].email1 }}</a><br>#}
+{#          <i class="las la-map-marker"></i><a href="https://goo.gl/maps/xb8JJ222PDdaWmhP7">{{ own[0].ulica_dom}} <br>{{ own[0].index }}<br> Žiar nad Hronom</a>#}
+
+{#    <li><i class="las la-mobile-alt"></i><a href="tel:{{ owner(own.phone1) }}">{{ owner(own.phone1) }}</a></li>#}
+{#           <li><i class="las la-envelope"></i><a href="mailto:{{ i.email1 }}">{{ i.email1 }}</a></li>#}
+{#           <li><i class="las la-map-marker"></i><a href="https://goo.gl/maps/xb8JJ222PDdaWmhP7">{{ i.ulica_dom}}<br>965 01 Žiar nad Hronom</a></li>#}
+
+{#{% endblock %}#}
