@@ -1,14 +1,30 @@
-{% extends "main/base.html" %}
+{% extends "main2/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block head %}
+{{ super() }}
 {% block title %}Flasky - Register{% endblock %}
+{% endblock %}
 
-{% block page_content %}
-<div class="page-header">
-    <h1>Register</h1>
+{% block body %}
+
+
+
+{% block main %}
+
+    {% block modeli %}
+
+
+<div class="container">
+    <div class="page-header">
+        <h1>Register</h1>
+    </div>
+    <div class="col-md-4">
+        {{ wtf.quick_form(form) }}
+    </div>
 </div>
-<div class="col-md-4">
-    {{ wtf.quick_form(form) }}
-</div>
+    {% endblock %}
+{% endblock %}
+
 {% endblock %}
 

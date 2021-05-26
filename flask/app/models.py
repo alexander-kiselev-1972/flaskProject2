@@ -71,10 +71,13 @@ class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(64), unique=True, index=True)
+    first_name = db.Column(db.String(64))
+    last_name = db.Column(db.String(64))
     username = db.Column(db.String(64), unique=True, index=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id', ondelete='CASCADE'))
     password_hash = db.Column(db.String(128))
     confirmed = db.Column(db.Boolean, default=False)
+
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
@@ -216,10 +219,148 @@ class Foto(db.Model):
         return self.name, self.images
 
 
+class Messages(db.Model):
+    __tablename__='messages'
+    id = db.Column(db.Integer, primary_key=True)
+    subject = db.Column(db.String(128))
+    mess = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('anonymous.id', ondelete='CASCADE'))
+
+    def __repr__(self):
+        return self.subject, self.mess
+
+class Anonymous(db.Model):
+    __tablename__='anonymous'
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(64))
+    last_name = db.Column(db.String(64))
+    email = db.Column(db.String(64), unique=True, index=True)
+    mess = db.relationship('Messages', backref='message', passive_deletes=True)
+
+
+    def __repr__(self):
+        return self.last_name, self.first_name, self.email
+
+
+class ModelCamp(db.Model):
+    __tablename__ = 'model_camp'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    model = db.relationship("Config", backref='model', passive_deletes=True)
+    #manufacturer = db.Column(db.Integer, db.ForeignKey('manufactured.id', ondelete='CASCADE'))
+   # manufactured = db.relationship('Manufactured', backref='manufactur', passive_deletes=True)
+    #config = db.relationship('Config', backref='model',  passive_deletes=True)
+
+    # def __init__(self, **kwargs):
+    #     super(Campers, self).__init__(**kwargs)
+    #     if self.name is None:
+    #         self.name = "Veles"
+    #         self.manufacturer = 1
+
+    # @staticmethod
+    # def set():
+    #     c = Model_camp(name="Veles", manufacturer=1)
+    #     db.session.add(c)
+    #     db.session.commit()
+
+
+
+
+    def __repr__(self):
+        return self.name
+
+
+
+
+
+class Manufactured(db.Model):
+    __tablename__='manufactured'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    email = db.Column(db.String(64))
+    telegramm = db.Column(db.String(64))
+    model = db.Column(db.Integer, db.ForeignKey('model_camp.id', ondelete='CASCADE'))
+    #camper = db.relationship('Model_camp', backref='Manufactura', lazy='dynamic', passive_deletes=True)
+
+    def __init__(self, **kwargs):
+        super(Manufactured, self).__init__(**kwargs)
+        if self.name is None:
+            self.name = "Enisey"
+            self.email = "enisey@kolesey.ru"
+            self.telegramm = "54637"
+
+    @staticmethod
+    def set():
+        manufact = Manufactured(name="Enisey", email="enisey@kolesey.ru", telegramm="54637")
+        db.session.add(manufact)
+        db.session.commit()
+
+    def __repr__(self):
+        return self.name, self.telegramm
+
+class Config(db.Model):
+    __tablename__='config'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    price = db.Column(db.Integer)
+    mattress_id = db.Column(db.Integer, db.ForeignKey('mattress.id', ondelete='CASCADE'))
+
+    model_id = db.Column(db.Integer, db.ForeignKey("model_camp.id", ondelete='CASCADE'))
+
+
+    def __repr__(self):
+        return self.name
+
+
+class Mattress(db.Model):
+    __tablename__='mattress'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    description = db.Column(db.Text)
+    price = db.Column(db.Integer)
+    config = db.relationship('Config', backref='mattress',  passive_deletes=True)
+
+
+
+
+    def __repr__(self):
+        return self.name
+
+
+class Campers_nav(db.Model):
+    __tablename__='campers_nav'
+    id = db.Column(db.Integer, primary_key=True)
+    h2_teg = db.Column(db.String(32), default="Karavan")
+    p_teg = db.Column(db.Text, default="malý mobilný dom, ideálny na pohodlnú rekreáciu v prírode. Vhodný pre rybárov, poľovníkov a na\
+                        cestovanie. Vyrobený v konfigurácii prívesu „teardrop“, kde miesto na spanie a kuchynský modul\
+                        sú umiestnené v samostatných priehradkách. Izolované sú steny, strop a podlaha. Najväčšia\
+                        prípustná celková hmotnosť prívesu nepresahuje 750 kg.")
+
+    def __repr__(self):
+        return self.h2_teg, self.p_teg
+
+
+
+class Headers(db.Model):
+    __tablename__="header"
+    id = db.Column(db.Integer, primary_key=True)
+    h4_text = db.Column(db.String(256), default='Ponúkame vám kompaktné multifunkčné mini karavany!')
+
+    def __repr__(self):
+        return self.h4_text
+
 
 models_dict = {
     "User":User,
     "Role":Role,
     "Owner":Owner,
-    "Foto":Foto
+    "Foto":Foto,
+    "Messages": Messages,
+    "Anonymous":Anonymous,
+    "ModelCamp":ModelCamp,
+    "Manufactured":Manufactured,
+    "Config":Config,
+    "Campers_nav":Campers_nav,
+    "Mattress":Mattress,
+    "Headers":Headers
 }

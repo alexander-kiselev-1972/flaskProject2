@@ -1,4 +1,5 @@
 {% extends "bootstrap/base.html" %}
+{% from "main/macros.html" import name_own %}
 
 {% block title %}Flasky{% endblock %}
 
@@ -23,12 +24,21 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li>{{ name }}</li>
             </ul>
+
+
+
+
+
+
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    <li>{{ name_own }}</li>
                 {% else %}
                 <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                    <li>{{ name_own(own) }}</li>
                 {% endif %}
             </ul>
         </div>

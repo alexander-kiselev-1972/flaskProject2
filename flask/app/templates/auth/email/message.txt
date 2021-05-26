@@ -1,0 +1,7 @@
+На сайт поступило письмо от посетителя: {{ user }}
+
+email: {{ email }}
+Subject: {{ user_subject }}
+
+Текст: {{ user_message }}
+

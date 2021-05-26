@@ -1,0 +1,337 @@
+{
+  "models": [
+    {
+      "id": "1",
+      "name": "VELES",
+      "description": "Vyrobený v konfigurácii prívesu „teardrop“, kde miesto na spanie a kuchynský modul sú umiestnené v samostatných priehradkách. Izolované sú steny, strop a podlaha. Najväčšia prípustná celková hmotnosť prívesu nepresahuje 750 kg. Potrebujete iba vodičský preukaz kategórie „B“ a auto s výkonom motora vyšším ako 37 kW (50 PS). Technické údaje:\n-\tcelkové rozmery samotného modulu (L*W*H) mm – 2800*1500*1250;\n-\tvonkajšia krytina strechy, podlahy a bokov - hliníkový kompozit (alucobond alebo analóg);\n-\thrúbka izolácie stien a vnútorných priečok je 20 mm; stropu – 30 mm. Hrúbka podlahovej izolácie - 50 mm;\n-\tvnútorný náter - lakovaná preglejka;\n-\trámovanie (obruba) - hliníkový profil;\n-\tfarba modulu je na výber.\n",
+      "album_id": ""
+    }
+  ],
+  "model_config": [
+    {
+      "id": "1",
+      "model_id": "1",
+      "name": "ZÁKLADNÁ",
+      "description": "",
+      "price": "7050",
+      "album_id": "",
+      "css_class": "pricing-card wow fadeInLeft",
+      "heater_id": "",
+      "mosquito_net_id": "1",
+      "stove_id": "",
+      "roof_rack_id": "",
+      "akb_id": "",
+      "solar_panel_id": "",
+      "socket_collection_id": "",
+      "light_collection_id": "",
+      "tank_id": "",
+      "pump_id": "",
+      "sink_id": "",
+      "mattress_id": "",
+      "fittings_id": "",
+      "runduk_id": "",
+      "boxes_collections_id": "",
+      "ventilation_id": "",
+      "windows_id": "",
+      "seal_id": "",
+      "doors_id": "",
+      "warming_id": ""
+    },
+    {
+      "id": "2",
+      "model_id": "1",
+      "name": "LUX",
+      "description": "",
+      "price": "8950",
+      "album_id": "",
+      "css_class": "pricing-card active wow fadeInUp",
+      "heater_id": "1",
+      "mosquito_net_id": "1",
+      "stove_id": "1",
+      "roof_rack_id": "1",
+      "akb_id": "1",
+      "solar_panel_id": "1",
+      "socket_collection_id": "",
+      "light_collection_id": "",
+      "tank_id": "2",
+      "pump_id": "",
+      "sink_id": "1",
+      "mattress_id": "1",
+      "fittings_id": "",
+      "runduk_id": "1",
+      "boxes_collections_id": "",
+      "ventilation_id": "",
+      "windows_id": "",
+      "seal_id": "",
+      "doors_id": "",
+      "warming_id": ""
+    },
+    {
+      "id": "3",
+      "model_id": "1",
+      "name": "KOMFORT",
+      "description": "",
+      "price": "8050",
+      "album_id": "",
+      "css_class": "pricing-card wow fadeInRight",
+      "heater_id": "1",
+      "mosquito_net_id": "1",
+      "stove_id": "1",
+      "roof_rack_id": "1",
+      "akb_id": "1",
+      "solar_panel_id": "1",
+      "socket_collection_id": "",
+      "light_collection_id": "",
+      "tank_id": "2",
+      "pump_id": "",
+      "sink_id": "1",
+      "mattress_id": "1",
+      "fittings_id": "",
+      "runduk_id": "1",
+      "boxes_collections_id": "",
+      "ventilation_id": "",
+      "windows_id": "",
+      "seal_id": "",
+      "doors_id": "",
+      "warming_id": ""
+    }
+  ],
+  "akb": [
+    {
+      "id": "1",
+      "name": "Gélová batéria 12V 7Ah",
+      "description": "",
+      "volt": "12",
+      "amp_hour": "7",
+      "price": "",
+      "album_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Gélová batéria 12V 45Ah",
+      "description": "",
+      "volt": "12",
+      "amp_hour": "45",
+      "price": "",
+      "album_id": ""
+    },
+    {
+      "id": "3",
+      "name": "Gélová batéria 12V 100Ah",
+      "description": "",
+      "volt": "12",
+      "amp_hour": "100",
+      "price": "270",
+      "album_id": ""
+    }
+  ],
+  "color": [
+    {
+      "id": "1",
+      "name": "Zelená",
+      "value": "green",
+      "foto_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Petrolejová",
+      "value": "asphalt",
+      "foto_id": ""
+    },
+    {
+      "id": "3",
+      "name": "Močiar",
+      "value": "marsh",
+      "foto_id": ""
+    },
+    {
+      "id": "4",
+      "name": "Majská modrá",
+      "value": "sky-blue",
+      "foto_id": ""
+    },
+    {
+      "id": "5",
+      "name": "Žltá",
+      "value": "yellow",
+      "foto_id": ""
+    },
+    {
+      "id": "6",
+      "name": "Červená",
+      "value": "red",
+      "foto_id": ""
+    },
+    {
+      "id": "7",
+      "name": "Oranžová",
+      "value": "orange",
+      "foto_id": ""
+    },
+    {
+      "id": "8",
+      "name": "Šedá",
+      "value": "grey",
+      "foto_id": ""
+    },
+    {
+      "id": "9",
+      "name": "Modrá",
+      "value": "blue",
+      "foto_id": ""
+    },
+    {
+      "id": "10",
+      "name": "Fialová",
+      "value": "violet",
+      "foto_id": ""
+    },
+    {
+      "id": "11",
+      "name": "Iná farba",
+      "value": "another-color",
+      "foto_id": ""
+    },
+    {
+      "id": "12",
+      "name": "Chcem svoj výtlačok",
+      "value": "own-print",
+      "foto_id": ""
+    }
+  ],
+  "heater": [
+    {
+      "id": "1",
+      "name": "Autonómny naftový ohrievač \"Webasto\"",
+      "description": "",
+      "price": "780",
+      "album_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Autonómny naftový ohrievač \"Sputnik\"",
+      "description": "",
+      "price": "580",
+      "album_id": ""
+    }
+  ],
+  "mattress": [
+    {
+      "id": "1",
+      "name": "Penová guma",
+      "description": "",
+      "price": "100"
+    },
+    {
+      "id": "2",
+      "name": "penka",
+      "description": "dsdsdsds --- ",
+      "price": "150"
+    }
+  ],
+  "mosquito_net": [
+    {
+      "id": "1",
+      "name": "Siete proti komárom",
+      "description": "",
+      "price": "100",
+      "album_id": ""
+    }
+  ],
+  "roof_rack": [
+    {
+      "id": "1",
+      "name": "Strešný nosič (priečne tyče)",
+      "description": "",
+      "price": "250",
+      "album_id": ""
+    }
+  ],
+  "runduk": [
+    {
+      "id": "1",
+      "name": "Skriňa na veci na oji prívesu, 200l",
+      "description": "",
+      "price": "320",
+      "album_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Skriňa na veci na oji prívesu, 100l",
+      "description": "",
+      "price": "220",
+      "album_id": ""
+    }
+  ],
+  "seal": [
+    {
+      "id": "1",
+      "name": "Я не знаю",
+      "description": "Hrúbka izolácie stien a vnútorných priečok je 20mm; stropu – 30mm. Hrúbka podlahovej izolácie - 50mm.",
+      "album_id": ""
+    }
+  ],
+  "sink": [
+    {
+      "id": "1",
+      "name": "Drez s elektrickým kohútikom",
+      "description": "",
+      "album_id": ""
+    }
+  ],
+  "solar_panel": [
+    {
+      "id": "1",
+      "name": "Solárny panel + regulátor",
+      "description": "100Wp",
+      "price": "",
+      "album_id": ""
+    }
+  ],
+  "stove": [
+    {
+      "id": "1",
+      "name": "Plynový sporák Dometic",
+      "description": "",
+      "price": "695",
+      "album_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Prenosný plynový sporák s jedným horákom",
+      "description": "",
+      "price": "60",
+      "album_id": ""
+    }
+  ],
+  "tank": [
+    {
+      "id": "1",
+      "name": "Nádrž na čistú vodu 30l a 30l na špinavú vodu",
+      "description": "",
+      "price": "",
+      "album_id": ""
+    },
+    {
+      "id": "2",
+      "name": "Nádrž na čistú vodu 50l a 10l na špinavú vodu",
+      "description": "",
+      "price": "60",
+      "album_id": ""
+    }
+  ],
+  "own": {
+    "id": "1",
+    "name": "DEILMANN s.r.o.",
+    "email1": "deilmann.sro@gmail.com",
+    "email2": "karavan@deilmann.sk",
+    "email3": "email@email.it",
+    "phone1": "+421 950 764 554",
+    "phone2": "+421-950-764-554",
+    "phone3": "",
+    "icho": "51 462 036",
+    "ulica_dom": "Medzi Vodami 216/6",
+    "index": "965 01",
+    "text": "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard."
+  }
+}

@@ -1,0 +1,57 @@
+{ "mattress": [
+  {
+    "id": "1",
+    "name": "foam proof",
+    "description": "dsdsdsds",
+    "price": "100"
+  },
+  {
+    "id": "2",
+    "name": "penka",
+    "description": "dsdsdsds --- ",
+    "price": "150"
+  },
+  {
+    "id": "3",
+    "name": "pruzinka",
+    "description": "dsdsdsds- aaa",
+    "price": "260"
+  }
+],
+
+  "header": {
+    "id": 1,
+    "h4_text": "Ponúkame vám kompaktné multifunkčné mini karavany!"
+  },
+
+
+
+  "own": {
+    "id": "1",
+    "name": "DEILMANN s.r.o.",
+    "email1": "deilmann.sro@gmail.com",
+    "email2": "karavan@deilmann.sk",
+    "email3": "email@email.it",
+    "phone1": "+421 950 764 554",
+    "phone2": "+421-950-764-554",
+    "phone3": "",
+    "icho": "1234",
+    "ulica_dom": "Medzi Vodami 216/6",
+    "index": "965 01",
+    "text": "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard."
+  },
+
+  "manufactured": {
+    "id": "1",
+    "name": "Enisey",
+    "email": "enisey@kolesey.ru",
+    "telegramm": "5437"
+  },
+  "model_camp": {
+    "id": 1,
+    "name": "Veles"
+  }
+
+
+
+}

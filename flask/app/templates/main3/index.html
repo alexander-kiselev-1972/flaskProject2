@@ -1,0 +1,55 @@
+{% extends "main3/base.html" %}
+
+
+{% block own_in_header %}
+    <h4 class="top-text">{{ h4 }}</h4>
+                </div>
+                <div class="col-12 col-lg-6 mt-auto mb-auto">
+                    <ul class="top-detail d-block d-lg-flex justify-content-center justify-content-lg-end">
+<li class="d-none d-lg-block"><span><i class="la la-mobile"></i></span><a href="tel:{{ own[0].phone1 }}">{{ own[0].phone1 }}</a></li>
+<li class="d-none d-lg-block"><span><i class="la la-envelope"></i></span><a href="mailto:{{ own[0].email2 }}">{{ own[0].email2 }}</a></li>
+                        <li class="social-links">
+                            <span class="fb"><a href="#"><i class="la la-facebook-f"></i></a></span>
+{#                            <span class="twit"><a href="#"><i class="la la-twitter"></i></a></span>#}
+                            <span class="insta"><a href="#"><i class="la la-instagram"></i></a></span>
+                        </li>
+                    </ul>
+{% endblock %}
+
+<!-- Lieave Form -->
+
+{% block forma %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert"></button>{{ message }}</div>
+{% endfor %}
+
+    <form class="contact-form"  method="post">
+    {{ form.csrf_token }}
+                    <div class="row my-form">
+                        <div class="display-error"><span id="error"></span></div>
+                        <div class="col-12 col-md-6">
+                            <label for="candidate_fname"></label><input type="text" class="form-control" id="candidate_fname" placeholder="First Name" required="required" {{ form.first_name}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="candidate_lname"></label><input type="text" class="form-control" id="candidate_lname" placeholder="Last Name" required="required" {{ form.last_name}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="user_email"></label><input type="email" class="form-control" id="user_email" placeholder="Email" required="required" {{ form.email}}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="user_subject"></label><input type="text" class="form-control" id="user_subject" placeholder="Subject" required="required" {{ form.subject}}
+                        </div>
+                        <div class="col-12">
+                            <label for="user_message"></label><textarea class="form-control" id="user_message" placeholder="Message" rows="7" required="required" {{ form.message}}</textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn anim-btn rounded-pill user-contact" type="submit">SUBMIT
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </button>
+                        </div>
+                    </div>
+
+    </form>
+{% endblock %}

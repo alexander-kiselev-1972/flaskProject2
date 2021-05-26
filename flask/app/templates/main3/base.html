@@ -1,9 +1,13 @@
+{% block base %}
+
 <!DOCTYPE html>
 {% from "caravan/macros.html" import rad %}
 
 {% block en %}
 <html lang="en">
 {% endblock %}
+
+{% block head %}
 <head>
     <!-- Meta Tags For Seo + Page Optimization -->
     <meta charset="utf-8">
@@ -14,8 +18,13 @@
     <meta name="description" content="Kompaktný multifunkčný mini caravan – toto je malý mobilný dom, ideálny na pohodlnú rekreáciu v prírode. Vhodný pre rybárov, poľovníkov a na cestovanie. Vďaka konštrukcii modulu, bude vo vnútri teplo aj pri -30°C a príjemne aj pri +30°C. Možnosť výberu modelu korpusu, konfigurácie a ďalších komponentov.">
     <!-- keywords -->
     <meta name="keywords" content="karavan, caravan, camper, camper trailer, travel trailer, towed trailer, кемпер, drop-trailer, teardrop, obytný príves, deilmann, cestovanie, rybárstvo, poľovnictvo, rekreácia, подорожі, риболовля, полювання, відпочинок, путешествия, рыбалка, охота, отдых, travel, fishing, hunting, recreation, Reisen, Angeln, Jagen, Erholung, Wohnwagen">
+
+    {% block title %}
     <!-- Page Title -->
     <title>Obytné prívesy | DEILMANN s.r.o.</title>
+    {% endblock %}
+
+
     <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='agency/images/favicon.ico') }}">
     <!--css links-->
@@ -35,21 +44,24 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+{% endblock %}
+
+{% block body %}
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
 
 <!--loading start-->
-<div class="loader">
-    <div class="loaders">
-        <div class="l" id="l-1"><i></i></div>
-        <div class="l" id="l-2"><i></i></div>
-        <div class="l" id="l-3"><i></i></div>
-        <div class="l" id="l-4"><i></i></div>
-        <div class="l" id="l-5"><i></i></div>
-        <div class="l" id="l-6"><i></i></div>
-        <div class="l" id="l-7"><i></i></div>
-        <div class="l" id="l-8"><i></i></div>
-    </div>
-</div>
+{#<div class="loader">#}
+{#    <div class="loaders">#}
+{#        <div class="l" id="l-1"><i></i></div>#}
+{#        <div class="l" id="l-2"><i></i></div>#}
+{#        <div class="l" id="l-3"><i></i></div>#}
+{#        <div class="l" id="l-4"><i></i></div>#}
+{#        <div class="l" id="l-5"><i></i></div>#}
+{#        <div class="l" id="l-6"><i></i></div>#}
+{#        <div class="l" id="l-7"><i></i></div>#}
+{#        <div class="l" id="l-8"><i></i></div>#}
+{#    </div>#}
+{#</div>#}
 <!--loading end-->
 
 <!--bottom Arrow start-->
@@ -65,18 +77,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 mt-auto mb-auto d-none d-lg-block">
+                {% block own_in_header %}
                     <h4 class="top-text">Ponúkame vám kompaktné multifunkčné mini karavany!</h4>
                 </div>
                 <div class="col-12 col-lg-6 mt-auto mb-auto">
                     <ul class="top-detail d-block d-lg-flex justify-content-center justify-content-lg-end">
-                        <li class="d-none d-lg-block"><span><i class="la la-mobile"></i></span><a href="tel:">+421 950 764 554</a></li>
-                        <li class="d-none d-lg-block"><span><i class="la la-envelope"></i></span><a href="mailto:">karavan@deilmann.sk</a></li>
+
+{#                        <li class="d-none d-lg-block"><span><i class="la la-mobile"></i></span><a href="tel:{{ own[0].phone2 }}">{{ own[0].phone1 }}</a></li>#}
+{#                        <li class="d-none d-lg-block"><span><i class="la la-envelope"></i></span><a href="mailto:{{ own[0].email2 }}">{{ own[0].email2 }}</a></li>#}
+
                         <li class="social-links">
                             <span class="fb"><a href="#"><i class="la la-facebook-f"></i></a></span>
 {#                            <span class="twit"><a href="#"><i class="la la-twitter"></i></a></span>#}
                             <span class="insta"><a href="#"><i class="la la-instagram"></i></a></span>
                         </li>
                     </ul>
+                     {% endblock %}
                     <div class="toggle-btn d-block d-lg-none">
                         <span></span>
                         <span></span>
@@ -154,6 +170,8 @@
 </header>
 <!--header sec end-->
 {% endblock %}
+
+
 {% block slider %}
 <!--slider sec start-->
 <div id="slider-section" class="slider-section">
@@ -463,7 +481,6 @@
 {% endblock %}
 
 {% block about_sec_start %}
-
 <!--About sec start-->
 <section id="about-sec" class="about-sec section-padding">
     <div class="container">
@@ -521,7 +538,6 @@
     </div>
 </section>
 <!--ABout sec end-->
-
 {% endblock %}
 
 
@@ -545,7 +561,7 @@
                         <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"><p>Všetky</p></div>
                         <div data-filter=".veles" class="cbp-filter-item"><p>VELES</p></div>
                         <div data-filter=".yenisei" class="cbp-filter-item"><p>YENISEI</p></div>
-                        <div data-filter=".ural" class="cbp-filter-item"><p>{{ rad(own) }}</p></div>
+{#                        <div data-filter=".ural" class="cbp-filter-item"><p>{{ rad(own) }}</p></div>#}
                         <div data-filter=".additions" class="cbp-filter-item"><p>Doplnky</p></div>
                     </div>
 
@@ -910,11 +926,9 @@
     </div>
 </section>
 <!--Pricing section end-->
-
 {% endblock %}
 
 {% block kontakt %}
-
 <!--Contact us sec start-->
 <section class="contact-sec" id="contact-sec">
     <div class="container">
@@ -929,15 +943,15 @@
                         <span class="fly-text">Kontakt</span>
                     </div>
                     <p class="small-text text-center text-md-left">
-                        {{ own[0].text }}
+{#                        {{ own[0].text }}#}
                     </p>
                     <div class="row location-details text-center text-md-left">
                         <div class="col-12 col-md-6 addr-list">
                             <h4 class="heading-text">Slovensko</h4>
                             <ul>
-                                <li><i class="las la-mobile-alt"></i><a href="tel:{{ own[0].phone2 }}">{{ own[0].phone1 }}</a></li>
-                                <li><i class="las la-envelope"></i><a href="mailto:{{ own[0].email1 }}">{{ own[0].email1 }}</a></li>
-                                <li><i class="las la-map-marker"></i><a target="_blank" href="https://goo.gl/maps/xb8JJ222PDdaWmhP7">{{ own[0].ulica_dom}}, <br>{{ own[0].index }} Žiar nad Hronom</a></li>
+{#                                <li><i class="las la-mobile-alt"></i><a href="tel:{{ own[0].phone2 }}">{{ own[0].phone1 }}</a></li>#}
+{#                                <li><i class="las la-envelope"></i><a href="mailto:{{ own[0].email1 }}">{{ own[0].email1 }}</a></li>#}
+{#                                <li><i class="las la-map-marker"></i><a target="_blank" href="https://goo.gl/maps/xb8JJ222PDdaWmhP7">{{ own[0].ulica_dom}}, <br>{{ own[0].index }} Žiar nad Hronom</a></li>#}
                             </ul>
                         </div>
                     </div>
@@ -982,11 +996,9 @@
     </div>
 </section>
 <!--Contact Us sec end-->
-
 {% endblock %}
 
 {% block map %}
-
 <!-- Map sec start-->
 <div id="map-sec" class="map-sec">
     <div class="row no-gutters">
@@ -994,9 +1006,9 @@
     </div>
 </div>
 <!-- Map sec ends -->
-
 {% endblock %}
 
+{% block footer %}
 <!-- Footer sec start-->
 <div class="footer-sec" id="footer-sec">
     <div class="container">
@@ -1018,7 +1030,10 @@
     </div>
 </div>
 <!-- Footer sec End -->
+{% endblock %}
 
+
+{% block cookie %}
 <!-- Cookie sec start-->
 <div id="cookie-agreement" class="cookie-wrap hide">
     <div class="container">
@@ -1031,7 +1046,10 @@
     </div>
 </div>
 <!-- Cookie sec End-->
+{% endblock %}
 
+
+{% block modal_sec_start %}
 <!-- Modal sec Start -->
 <div class="modal fade" id="chooseColor" tabindex="-1" aria-labelledby="chooseColorLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -1118,6 +1136,9 @@
     </div>
 </div>
 <!-- Modal sec End-->
+{% endblock %}
+
+
 
 <script src="{{ url_for('static', filename='vendor/js/bundle.min.js') }}"></script>
 <script src="{{ url_for('static', filename='vendor/js/jquery.themepunch.tools.min.js') }}"></script>
@@ -1148,4 +1169,7 @@
 <script src="{{ url_for('static', filename='agency/js/agree-cookie.js') }}"></script>
 
 </body>
+{% endblock %}
 </html>
+
+{% endblock %}

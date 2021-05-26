@@ -1,0 +1,21 @@
+{
+"roles": [
+	{
+		"id" : 1,
+		"name" : "User",
+		"default" : true,
+		"permissions" : 7
+	},
+	{
+		"id" : 2,
+		"name" : "Bayer",
+		"default" : false,
+		"permissions" : 15
+	},
+	{
+		"id" : 3,
+		"name" : "Administrator",
+		"default" : false,
+		"permissions" : 31
+	}
+]}

@@ -4,7 +4,7 @@
 
 import os
 from app import create_app, db
-from app.models import Permission,User, Role, models_dict
+from app.models import Permission,User, Role, models_dict, ModelCamp, Manufactured
 from flask import redirect, url_for, request
 from flask_migrate import Migrate
 from flask_admin.contrib.sqla import ModelView
@@ -34,13 +34,14 @@ class MyModelView(ModelView):
 class MyAdminIndexView(AdminIndexView):
 
     def is_accessible(self):
-        if current_user.is_authenticated:
-            print(current_user.id, "djn")
-            user = User.query.filter_by(id=current_user.id).first()
-            if user.role_id == 3:
-                return True
-            return False
-        return False
+        return current_user.is_administrator()
+        # if current_user.is_authenticated:
+        #     print(current_user.id, "djn")
+        #     user = User.query.filter_by(id=current_user.id).first()
+        #     if user.role_id == 3:
+        #         return True
+        #     return False
+        # return False
 
 
     def inaccessible_callback(self, name, **kwargs):
@@ -56,7 +57,7 @@ for i in models_dict:
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=db, User=User, Role=Role, Permission=Permission)
+    return dict(db=db, User=User, Role=Role, Permission=Permission, Campers=ModelCamp, Manufactured=Manufactured)
 
 
 @app.cli.command()
@@ -65,3 +66,8 @@ def test():
     import unittest
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
+
+
+# db.session.add(c)
+# db.session.commit()
+

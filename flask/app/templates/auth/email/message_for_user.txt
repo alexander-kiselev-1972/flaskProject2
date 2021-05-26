@@ -1,0 +1,5 @@
+Dear {{ user }}!
+
+
+Your appeal {{ user_message }} on the issue {{ user_subject }} has been registered. Thank you for your request!
+    We will answer you as soon as possible
