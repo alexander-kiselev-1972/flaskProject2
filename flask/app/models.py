@@ -4,6 +4,7 @@ from flask_login import UserMixin, AnonymousUserMixin
 from . import login_manager
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app
+from datetime import datetime
 
 
 class Permission:
@@ -77,6 +78,8 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id', ondelete='CASCADE'))
     password_hash = db.Column(db.String(128))
     confirmed = db.Column(db.Boolean, default=False)
+    mess = db.relationship('Messages', backref='message', passive_deletes=True)
+
 
 
     def __init__(self, **kwargs):
@@ -168,10 +171,12 @@ class AnonymousUser(AnonymousUserMixin):
     def can(self, permissions):
         return False
 
+
+
     def is_administrator(self):
         return False
 
-login_manager.anonymous_user = AnonymousUser
+#login_manager.anonymous_user = Anonymous()
 
 
 @login_manager.user_loader
@@ -224,22 +229,53 @@ class Messages(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(128))
     mess = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('anonymous.id', ondelete='CASCADE'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
 
     def __repr__(self):
         return self.subject, self.mess
 
-class Anonymous(db.Model):
+
+
+class Anonymous(db.Model, AnonymousUserMixin):
     __tablename__='anonymous'
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
     email = db.Column(db.String(64), unique=True, index=True)
-    mess = db.relationship('Messages', backref='message', passive_deletes=True)
+    date_time = db.Column(db.DateTime(), default=datetime.utcnow)
+    #согласен он с тем, что ему пришло письмо или нет?
+    confirmed = db.Column(db.Boolean, default=False)
+    #mess = db.relationship('Messages', backref='message', passive_deletes=True)
+
+
+
+
+    def generate_confirmation_token(self, expiration=3600):
+        s = Serializer(current_app.config['SECRET_KEY'], expiration)
+        return s.dumps({'confirm': self.id}).decode('utf-8')
+
+    def confirm(self, token):
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token.encode('utf-8'))
+        except:
+            return False
+        if data.get('confirm') != self.id:
+            return False
+        self.confirmed = True
+        db.session.add(self)
+        return False
+
+    def generate_reset_token(self, expiration=3600):
+        s = Serializer(current_app.config['SECRET_KEY'], expiration)
+        return s.dumps({'reset': self.id}).decode('utf-8')
+
 
 
     def __repr__(self):
         return self.last_name, self.first_name, self.email
+
+login_manager.anonymous_user = AnonymousUser
 
 
 class ModelCamp(db.Model):
@@ -251,11 +287,11 @@ class ModelCamp(db.Model):
    # manufactured = db.relationship('Manufactured', backref='manufactur', passive_deletes=True)
     #config = db.relationship('Config', backref='model',  passive_deletes=True)
 
-    # def __init__(self, **kwargs):
-    #     super(Campers, self).__init__(**kwargs)
-    #     if self.name is None:
-    #         self.name = "Veles"
-    #         self.manufacturer = 1
+    def __init__(self, **kwargs):
+        super(ModelCamp, self).__init__(**kwargs)
+        if self.name is None:
+            self.name = "Veles"
+            self.manufacturer = 1
 
     # @staticmethod
     # def set():
@@ -356,8 +392,8 @@ models_dict = {
     "Owner":Owner,
     "Foto":Foto,
     "Messages": Messages,
-    "Anonymous":Anonymous,
     "ModelCamp":ModelCamp,
+    "Anonimous":Anonymous,
     "Manufactured":Manufactured,
     "Config":Config,
     "Campers_nav":Campers_nav,

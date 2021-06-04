@@ -4,7 +4,7 @@
 
 import os
 from app import create_app, db
-from app.models import Permission,User, Role, models_dict, ModelCamp, Manufactured
+from app.models import Permission, User, Role, models_dict, ModelCamp, Manufactured
 from flask import redirect, url_for, request
 from flask_migrate import Migrate
 from flask_admin.contrib.sqla import ModelView
@@ -17,6 +17,8 @@ import flask_login
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 migrate = Migrate(app, db)
+
+
 
 
 

@@ -1,11 +1,12 @@
 from app import db
 from ..models import User, Owner, Foto, Messages, Anonymous, Campers_nav, Config
-from app.models import Headers
+from app.models import Headers, Config, models_dict
 from .forms import LeaveMessage
 from app.email import send_email, send_email_user
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for, signals, g
 import os
 import time
+import json
 
 
 
@@ -20,14 +21,19 @@ def get_header():
 
 
 def leave_messages(form):
+    """Логика для нижней формы"""
 
     try:
-        user = Anonymous.query.filter_by(email=form.email.data).first()
+
+        user = User.query.filter_by(email=form.email.data).first()
+
         if user is not None:
+            #session['user_id'] = user.id
             #Вставляем в User данные из формы
             messages = Messages(subject=form.subject.data, mess=form.message.data, user_id=user.id)
             db.session.add(messages)
             db.session.commit()
+
             #письмо нам
             send_email(os.environ.get('FLASKY_ADMIN'), 'Сообщение от посетителя сайта',
                        'auth/email/message', user=form.first_name.data, user_subject=form.subject.data,
@@ -44,11 +50,13 @@ def leave_messages(form):
             form.subject.data = ''
             form.email.data = ''
             form.message = ''
-        user_new = Anonymous(first_name=form.first_name.data, last_name=form.last_name.data, email=form.email.data)
+        user_new = User(first_name=form.first_name.data, last_name=form.last_name.data, email=form.email.data)
         db.session.add(user_new)
         db.session.commit()
 
-        user_id = Anonymous.query.filter_by(email=form.email.data).first().id
+        user = User.query.filter_by(email=form.email.data).first()
+        #session['user_id'] = user.id
+        user_id = user.id
         messages = Messages(subject=form.subject.data, mess=form.message.data, user_id=user_id)
         db.session.add(messages)
         db.session.commit()
@@ -59,6 +67,7 @@ def leave_messages(form):
                        user_message=form.message.data, email=form.email.data)
 
         # письмо посетителю сайта
+        token = user.generate_confirmation_token()
         email = str(form.email.data)
         send_email( email, 'Website visitor message',
                    'auth/email/message_for_user', user=form.first_name.data, user_subject=form.subject.data,
@@ -71,5 +80,11 @@ def leave_messages(form):
         form.message = ''
     except :
         pass
+
+
+def get_data(model):
+    model_data = model.query.all()
+    return model_data
+
 
 

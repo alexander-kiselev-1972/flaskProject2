@@ -109,7 +109,7 @@
                <div class="main-nav collapse navbar-collapse d-flex">
                    <ul class="navbar-nav left-nav d-flex">
                        <li class="nav-item">
-                           <a class="nav-link scroll" href="#home">Domov</a>
+                           <a class="nav-link scroll" href="{{ url_for('main.index') }}">Domov</a>
                        </li>
                        <li class="nav-item">
                            <a class="nav-link scroll" href="#about-sec">O karavanoch</a>
@@ -169,6 +169,12 @@
         </div>
 </header>
 <!--header sec end-->
+{% endblock %}
+
+{% block registration %}
+{% endblock %}
+
+{% block login %}
 {% endblock %}
 
 
@@ -887,38 +893,38 @@
                             </div>
                         </div>
                     </div>
-                        <form class="caravan-price" action="" method="post">
-                            {{ form_caravan.csrf_token() }}
-                            <ul class="feature-list">
-                                <li><label class="custom-checkbox">{{ form_caravan.heater(data_price='100') }}<span>Heater<img src="{{ url_for('static', filename='agency/images/heater.png') }}" alt="Heater"></span></label></li>
-                                <li><label class="custom-checkbox">{{ form_caravan.hatch_fan(data_price='200') }}<span>Roof hatch fan<img src="{{ url_for('static', filename='agency/images/hatch-fan.png') }}" alt="Roof hatch fan"></span></label></li>
-                                <li><label class="custom-checkbox">{{ form_caravan.caravan_cover(data_price='300') }}<span>Caravan cover<img src="{{ url_for('static', filename='agency/images/caravan-cover.png') }}" alt="Caravan cover"></span></label></li>
-                                <li><label class="custom-checkbox">{{ form_caravan.support_legs(data_price='300') }}<span>Trailer support legs<img src="{{ url_for('static', filename='agency/images/support-legs.png') }}" alt="Trailer support legs"></span></label></li>
-                                <li><label class="custom-checkbox">{{ form_caravan.roof_rack(data_price='200') }}<span>Roof rack cross bars<img src="{{ url_for('static', filename='agency/images/roof-rack.png')}}" alt="Roof rack cross bars"></span></label></li>
-
-                                {{ form_caravan.color(value='') }}
-                                <li><button type="button" class="btn btn-warning btn-sm btn-color btn-choose-color" data-toggle="modal" data-target="#chooseColor" data-id_modal="{{ x.id - 1 }}">Choose a color</button></li>
-
-                                {% for radio_chassis in form_caravan.chassis %}
-                                    {% if radio_chassis.id == 'chassis-0' %}
-                                        <li><label class="custom-radio">{{ radio_chassis() }}<span>Without chassis<img src="{{ url_for('static', filename='agency/images/no-chassis.png') }}" alt="Without chassis"></span></label></li>
-                                    {% else %}
-                                        <li><label class="custom-radio">{{ radio_chassis(data_price='600', checked=true) }}<span>With chassis<img src="{{ url_for('static', filename='agency/images/with-chassis.png') }}" alt="With chassis"></span></label>
-                                            <ul class="feature-list brake">
-                                                <li><label class="custom-checkbox">{{ form_caravan.parking_brake(data_price='520') }}<span>With parking brake<img src="{{ url_for('static', filename='agency/images/parking-brake-2.jpg')}}" alt="Parking brake"></span></label></li>
-                                                <li><label class="custom-checkbox">{{ form_caravan.spare_tire(data_price='100') }}<span>Spare tire<img src="{{ url_for('static', filename='agency/images/spare-tire.png') }}" alt="Spare tire"></span></label></li>
-                                            </ul>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-
-                                {{ form_caravan.price(value='') }}
-                                {{ form_caravan.model_id(id='model_id-' ~ x.id, value=x.id) }}
-                            </ul>
-
-                            {{ form_caravan.submit(class='btn yellow-anim-btn rounded-pill w-100') }}
-                            <!-- <a href="#" class="btn yellow-anim-btn rounded-pill w-100"><span></span><span></span><span></span><span></span><span></span>Купить</a> -->
-                        </form>
+{#                        <form class="caravan-price" action="" method="post">#}
+{#                            {{ form_caravan.csrf_token() }}#}
+{#                            <ul class="feature-list">#}
+{#                                <li><label class="custom-checkbox">{{ form_caravan.heater(data_price='100') }}<span>Heater<img src="{{ url_for('static', filename='agency/images/heater.png') }}" alt="Heater"></span></label></li>#}
+{#                                <li><label class="custom-checkbox">{{ form_caravan.hatch_fan(data_price='200') }}<span>Roof hatch fan<img src="{{ url_for('static', filename='agency/images/hatch-fan.png') }}" alt="Roof hatch fan"></span></label></li>#}
+{#                                <li><label class="custom-checkbox">{{ form_caravan.caravan_cover(data_price='300') }}<span>Caravan cover<img src="{{ url_for('static', filename='agency/images/caravan-cover.png') }}" alt="Caravan cover"></span></label></li>#}
+{#                                <li><label class="custom-checkbox">{{ form_caravan.support_legs(data_price='300') }}<span>Trailer support legs<img src="{{ url_for('static', filename='agency/images/support-legs.png') }}" alt="Trailer support legs"></span></label></li>#}
+{#                                <li><label class="custom-checkbox">{{ form_caravan.roof_rack(data_price='200') }}<span>Roof rack cross bars<img src="{{ url_for('static', filename='agency/images/roof-rack.png')}}" alt="Roof rack cross bars"></span></label></li>#}
+{##}
+{#                                {{ form_caravan.color(value='') }}#}
+{#                                <li><button type="button" class="btn btn-warning btn-sm btn-color btn-choose-color" data-toggle="modal" data-target="#chooseColor" data-id_modal="{{ x.id - 1 }}">Choose a color</button></li>#}
+{##}
+{#                                {% for radio_chassis in form_caravan.chassis %}#}
+{#                                    {% if radio_chassis.id == 'chassis-0' %}#}
+{#                                        <li><label class="custom-radio">{{ radio_chassis() }}<span>Without chassis<img src="{{ url_for('static', filename='agency/images/no-chassis.png') }}" alt="Without chassis"></span></label></li>#}
+{#                                    {% else %}#}
+{#                                        <li><label class="custom-radio">{{ radio_chassis(data_price='600', checked=true) }}<span>With chassis<img src="{{ url_for('static', filename='agency/images/with-chassis.png') }}" alt="With chassis"></span></label>#}
+{#                                            <ul class="feature-list brake">#}
+{#                                                <li><label class="custom-checkbox">{{ form_caravan.parking_brake(data_price='520') }}<span>With parking brake<img src="{{ url_for('static', filename='agency/images/parking-brake-2.jpg')}}" alt="Parking brake"></span></label></li>#}
+{#                                                <li><label class="custom-checkbox">{{ form_caravan.spare_tire(data_price='100') }}<span>Spare tire<img src="{{ url_for('static', filename='agency/images/spare-tire.png') }}" alt="Spare tire"></span></label></li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                    {% endif %}#}
+{#                                {% endfor %}#}
+{##}
+{#                                {{ form_caravan.price(value='') }}#}
+{#                                {{ form_caravan.model_id(id='model_id-' ~ x.id, value=x.id) }}#}
+{#                            </ul>#}
+{##}
+{#                            {{ form_caravan.submit(class='btn yellow-anim-btn rounded-pill w-100') }}#}
+{#                            <!-- <a href="#" class="btn yellow-anim-btn rounded-pill w-100"><span></span><span></span><span></span><span></span><span></span>Купить</a> -->#}
+{#                        </form>#}
                     </div>
                 </div>
             {% endfor %}

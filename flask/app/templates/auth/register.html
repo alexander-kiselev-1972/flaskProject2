@@ -1,29 +1,48 @@
-{% extends "main2/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "main3/base.html" %}
+
 
 {% block head %}
 {{ super() }}
-{% block title %}Flasky - Register{% endblock %}
+
 {% endblock %}
 
 {% block body %}
-
-
-
-{% block main %}
-
-    {% block modeli %}
-
-
-<div class="container">
-    <div class="page-header">
-        <h1>Register</h1>
-    </div>
-    <div class="col-md-4">
-        {{ wtf.quick_form(form) }}
-    </div>
-</div>
+    {% block header %}
+        {{ super() }}
     {% endblock %}
+    <br>
+    <br><br><br><br><br><br><br><br>
+
+
+    {% block registration %}
+<div class="container">
+<form  class="contact-form" method="post">
+    {{ form.csrf_token }}
+  <div class="col-md-4">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" {{ form.email }}
+
+  </div>
+  <div class="col-md-4">
+      <label for="InputName" class="form-label">Name</label>
+      <input type="text" class="form-control" id="InputName" {{ form.username }}
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" {{ form.password }}
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" {{ form.password2 }}
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</div>
+
 {% endblock %}
 
 {% endblock %}

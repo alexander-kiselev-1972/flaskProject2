@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for, flash
 from . import main
 from .forms import LeaveMessage
 from .. import db
@@ -16,6 +16,7 @@ def index():
     config = Config.query.all()
     campers_nav = Campers_nav.query.all()
     foto = Foto.query.all()
+    config = Config.query.all()
 
     form = LeaveMessage()
 
@@ -23,7 +24,11 @@ def index():
         leave_messages(form)
         return redirect(url_for(".index"))
 
-    return render_template('main3/index.html', h4=h4, own=own, form=form)
+    return render_template('main3/index.html', h4=h4, own=own, form=form, models=config)
+
+
+
+
 
 
 @main.route('/cookie')

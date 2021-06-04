@@ -1,25 +1,46 @@
-{% extends "main2/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% extends "main3/base.html" %}
+
 
 {% block title %}Flasky - Login{% endblock %}
 
-{% block page_content %}
+{% block body %}
 
-    {% block campers_nav %}
+
+    {% block header %}
+        {{ super() }}
     {% endblock %}
 
+    <br>
+
+{#    {% block campers_nav %}#}
+{#    {% endblock %}#}
 <div class="container">
-<div class="page-header">
+
+    <div class="center-block">
+    <br>
+    <br>
+    <br>
+    <br>
     <h1>Login</h1>
+<form  class="contact-form" method="post">
+    {{ form.csrf_token }}
+  <div class="col-md-4">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" {{ form.email }}
+
+  </div>
+  <div class="col-md-4">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" {{ form.password }}
+  </div>
+  <div class="col-md-4 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" {{ form.remember_me }}
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <p><a href="{{ url_for('auth.register') }}">register</a> </p>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
-<div class="col-md-6">
-    {{ wtf.quick_form(form) }}
-<p>
-    New user?
-    <a href="{{ url_for('auth.register') }}">
-        Click here to register
-    </a>
-</p>
-</div>
+
 </div>
 {% endblock %}

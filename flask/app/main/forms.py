@@ -10,3 +10,7 @@ class LeaveMessage(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     message = TextAreaField('Message', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
+class Model(FlaskForm):
+    pass

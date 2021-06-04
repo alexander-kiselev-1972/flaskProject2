@@ -1,10 +1,15 @@
-{% extends "main/base.html" %}
+{% extends "main3/base.html" %}
 
 
-{% block title %}Flasky - Confirm your account{% endblock %}
 
-{% block page_content %}
 
+{% block body %}
+    {% block header %}
+        {{ super() }}
+        <br><br><br><br><br><br><br><br>
+    {% endblock %}
+
+<div class="container">
 <div class="page-header">
     <h1>
         Hello, {{ current_user.first_name }}!
@@ -18,5 +23,6 @@
         Need another confirmation email?
         <a href="{{ url_for('auth.resend_confirmation') }}">Click here</a>
     </p>
+</div>
 </div>
 {% endblock %}
