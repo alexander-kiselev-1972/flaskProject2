@@ -1,5 +1,5 @@
 from app import db
-from ..models import User, Owner, Foto, Messages, Anonymous, Campers_nav, Config
+from ..models import User, Owner, Foto, Messages,  Campers_nav, Config
 from app.models import Headers, Config, models_dict
 from .forms import LeaveMessage
 from app.email import send_email, send_email_user

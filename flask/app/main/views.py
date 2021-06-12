@@ -4,7 +4,7 @@ from . import main
 from .forms import LeaveMessage
 from .. import db
 from .logic import get_header, leave_messages
-from ..models import User, Owner, Foto, Messages, Anonymous, Campers_nav, Config
+from ..models import User, Owner, Foto, Messages,  Campers_nav, Config
 from flask_login import login_user, current_user
 from app.email import send_email
 import os

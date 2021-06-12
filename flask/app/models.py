@@ -235,7 +235,7 @@ class Messages(db.Model):
         return self.subject, self.mess
 
 
-
+login_manager.anonymous_user = AnonymousUser
 
 
 class ModelCamp(db.Model):
@@ -353,7 +353,6 @@ models_dict = {
     "Foto":Foto,
     "Messages": Messages,
     "ModelCamp":ModelCamp,
-    "Anonimous":Anonymous,
     "Manufactured":Manufactured,
     "Config":Config,
     "Campers_nav":Campers_nav,
