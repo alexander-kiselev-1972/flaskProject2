@@ -50,7 +50,28 @@
   "model_camp": {
     "id": 1,
     "name": "Veles"
-  }
+  },
+  "config": [{
+    "id": 1,
+    "name": "Base",
+    "price": "1000",
+    "mattress_id": "1",
+    "model_id": "1"
+  },
+{
+  "id": 2,
+    "name": "Comfort",
+    "price": "2000",
+    "mattress_id": "2",
+    "model_id": "1"
+},
+{
+"id": 3,
+    "name": "Lux",
+    "price": "3000",
+    "mattress_id": "3",
+    "model_id": "1"
+}]
 
 
 

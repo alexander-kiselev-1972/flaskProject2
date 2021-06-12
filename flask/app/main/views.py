@@ -13,7 +13,7 @@ import os
 def index():
     h4 = get_header()
     own = Owner.query.all()
-    config = Config.query.all()
+
     campers_nav = Campers_nav.query.all()
     foto = Foto.query.all()
     config = Config.query.all()

@@ -236,46 +236,6 @@ class Messages(db.Model):
 
 
 
-class Anonymous(db.Model, AnonymousUserMixin):
-    __tablename__='anonymous'
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(64))
-    last_name = db.Column(db.String(64))
-    email = db.Column(db.String(64), unique=True, index=True)
-    date_time = db.Column(db.DateTime(), default=datetime.utcnow)
-    #согласен он с тем, что ему пришло письмо или нет?
-    confirmed = db.Column(db.Boolean, default=False)
-    #mess = db.relationship('Messages', backref='message', passive_deletes=True)
-
-
-
-
-    def generate_confirmation_token(self, expiration=3600):
-        s = Serializer(current_app.config['SECRET_KEY'], expiration)
-        return s.dumps({'confirm': self.id}).decode('utf-8')
-
-    def confirm(self, token):
-        s = Serializer(current_app.config['SECRET_KEY'])
-        try:
-            data = s.loads(token.encode('utf-8'))
-        except:
-            return False
-        if data.get('confirm') != self.id:
-            return False
-        self.confirmed = True
-        db.session.add(self)
-        return False
-
-    def generate_reset_token(self, expiration=3600):
-        s = Serializer(current_app.config['SECRET_KEY'], expiration)
-        return s.dumps({'reset': self.id}).decode('utf-8')
-
-
-
-    def __repr__(self):
-        return self.last_name, self.first_name, self.email
-
-login_manager.anonymous_user = AnonymousUser
 
 
 class ModelCamp(db.Model):
